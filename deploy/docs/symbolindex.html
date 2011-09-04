@@ -1,0 +1,1809 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		
+		<title>JsDoc Reference - Index</title>
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+        <link rel="stylesheet" href="static/default.css" type="text/css" media="screen" charset="utf-8" />
+
+        <style>
+            #symbolFilter {
+                margin-top: 2em;
+                margin-bottom: 1em;
+            }
+
+            .hidden {
+                visibility: hidden;
+                display: none;
+            }
+        </style>
+
+        <script>
+            var overview, filterField;
+
+            function filterOverview() {
+                var i, name,
+                    lst = overview.getElementsByTagName('tr'),
+                    regex = filterField.value ? ('^(' + filterField.value + ')') : '.*';
+
+                regex = new RegExp(regex, 'i');
+                for (i = 0; i < lst.length; i++) {
+                    name = lst[i].getElementsByTagName('td')[0].innerHTML;
+                    if (regex.test(name)) {
+                        lst[i].className = 'symbolEntry';
+                    } else {
+                        lst[i].className = 'symbolEntry hidden';
+                    }
+                }
+            }
+
+            var init = function() {
+                overview = window.document.getElementById('symbolOverview');
+                filterField = window.document.getElementById('symbolFilter');
+
+                filterField.addEventListener('change', filterOverview, false);
+                filterOverview();
+
+                delete init;
+            }
+        </script>
+	</head>
+	
+	<body onload="init()">
+		<div id="header">
+</div>
+
+		<div id="index">
+            <div id="docs">
+                
+            </div>
+			
+<h2>Index</h2>
+<ul class="classList">
+  <li><a href="files.html">File Index</a></li>
+  <li><a href="index.html">Class Index</a></li>
+  <li><a href="symbolindex.html">Symbol Index</a></li>
+</ul>
+<h2>Classes</h2>
+<ul class="classList">
+	
+	<li><i><a href="symbols/_global_.html">_global_</a></i></li>
+	
+	<li><a href="symbols/A3.Core.Camera.BasicCamera.html">A3.Core.Camera.BasicCamera</a></li>
+	
+	<li><a href="symbols/A3.Core.Math.Matrix3.html">A3.Core.Math.Matrix3</a></li>
+	
+	<li><a href="symbols/A3.Core.Math.Matrix4.html">A3.Core.Math.Matrix4</a></li>
+	
+	<li><a href="symbols/A3.Core.Math.Vector2.html">A3.Core.Math.Vector2</a></li>
+	
+	<li><a href="symbols/A3.Core.Math.Vector3.html">A3.Core.Math.Vector3</a></li>
+	
+	<li><a href="symbols/A3.Core.Math.Vector4.html">A3.Core.Math.Vector4</a></li>
+	
+	<li><a href="symbols/A3.Core.Object3D.html">A3.Core.Object3D</a></li>
+	
+	<li><a href="symbols/A3.Core.Objects.Geometric.Face3.html">A3.Core.Objects.Geometric.Face3</a></li>
+	
+	<li><a href="symbols/A3.Core.Objects.Geometric.Face4.html">A3.Core.Objects.Geometric.Face4</a></li>
+	
+	<li><a href="symbols/A3.Core.Objects.Geometric.Vertex.html">A3.Core.Objects.Geometric.Vertex</a></li>
+	
+	<li><a href="symbols/A3.Core.Objects.Lights.AmbientLight.html">A3.Core.Objects.Lights.AmbientLight</a></li>
+	
+	<li><a href="symbols/A3.Core.Objects.Lights.DirectionalLight.html">A3.Core.Objects.Lights.DirectionalLight</a></li>
+	
+	<li><a href="symbols/A3.Core.Objects.Lights.Light.html">A3.Core.Objects.Lights.Light</a></li>
+	
+	<li><a href="symbols/A3.Core.Objects.Lights.PointLight.html">A3.Core.Objects.Lights.PointLight</a></li>
+	
+	<li><a href="symbols/A3.Core.Objects.Mesh.html">A3.Core.Objects.Mesh</a></li>
+	
+	<li><a href="symbols/A3.Core.Objects.Primitives.Cube.html">A3.Core.Objects.Primitives.Cube</a></li>
+	
+	<li><a href="symbols/A3.Core.Objects.Primitives.Plane.html">A3.Core.Objects.Primitives.Plane</a></li>
+	
+	<li><a href="symbols/A3.Core.Objects.Primitives.Sphere.html">A3.Core.Objects.Primitives.Sphere</a></li>
+	
+	<li><a href="symbols/A3.Core.Remote.MeshLoader.html">A3.Core.Remote.MeshLoader</a></li>
+	
+	<li><a href="symbols/A3.Core.Render.Renderer.html">A3.Core.Render.Renderer</a></li>
+	
+	<li><a href="symbols/A3.Core.Render.Shaders.Shader.html">A3.Core.Render.Shaders.Shader</a></li>
+	
+	<li><a href="symbols/A3.Core.Render.Shaders.ShaderLibrary.html">A3.Core.Render.Shaders.ShaderLibrary</a></li>
+	
+	<li><a href="symbols/A3.Core.Render.Textures.EnvironmentMap.html">A3.Core.Render.Textures.EnvironmentMap</a></li>
+	
+	<li><a href="symbols/A3.Core.Render.Textures.Texture.html">A3.Core.Render.Textures.Texture</a></li>
+	
+	<li><a href="symbols/A3.Core.Scene.BasicScene.html">A3.Core.Scene.BasicScene</a></li>
+	
+	<li><a href="symbols/A3.Core.Utility.html">A3.Core.Utility</a></li>
+	
+</ul>
+
+		</div>
+		
+		<div id="content">
+            <h1 id="classTitle">Symbol Index</h1>
+            <div>
+                <input id="symbolFilter" type="text" /><br />
+                <table id="symbolOverview">
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">A3</td>
+                      <td>
+                        
+                          <a href="symbols/_global_.html#A3">A3</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">add</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#add">A3.Core.Object3D#add</a>
+                        
+                          <a href="symbols/A3.Core.Math.Vector2.html#add">A3.Core.Math.Vector2#add</a>
+                        
+                          <a href="symbols/A3.Core.Math.Vector3.html#add">A3.Core.Math.Vector3#add</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#add">A3.Core.Object3D#add</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#add">A3.Core.Object3D#add</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#add">A3.Core.Object3D#add</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#add">A3.Core.Object3D#add</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#add">A3.Core.Object3D#add</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#add">A3.Core.Object3D#add</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#add">A3.Core.Object3D#add</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#add">A3.Core.Object3D#add</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#add">A3.Core.Object3D#add</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#add">A3.Core.Object3D#add</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">AmbientLight</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Lights.AmbientLight.html">A3.Core.Objects.Lights.AmbientLight</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">antialias</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Renderer.html#antialias">A3.Core.Render.Renderer#antialias</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">autoClear</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Renderer.html#autoClear">A3.Core.Render.Renderer#autoClear</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">BasicCamera</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Camera.BasicCamera.html">A3.Core.Camera.BasicCamera</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">BasicScene</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Scene.BasicScene.html">A3.Core.Scene.BasicScene</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">blendType</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Mesh.html#blendType">A3.Core.Objects.Mesh#blendType</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">buffers</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Mesh.html#buffers">A3.Core.Objects.Mesh#buffers</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">checkValue</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Utility.html#checkValue">A3.Core.Utility#checkValue</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">children</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#children">A3.Core.Object3D#children</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#children">A3.Core.Object3D#children</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#children">A3.Core.Object3D#children</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#children">A3.Core.Object3D#children</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#children">A3.Core.Object3D#children</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#children">A3.Core.Object3D#children</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#children">A3.Core.Object3D#children</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#children">A3.Core.Object3D#children</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#children">A3.Core.Object3D#children</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#children">A3.Core.Object3D#children</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#children">A3.Core.Object3D#children</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">clear</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Renderer.html#clear">A3.Core.Render.Renderer#clear</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">clearColor</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Renderer.html#clearColor">A3.Core.Render.Renderer#clearColor</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">color</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Lights.Light.html#color">A3.Core.Objects.Lights.Light#color</a>
+                        
+                          <a href="symbols/A3.Core.Objects.Lights.Light.html#color">A3.Core.Objects.Lights.Light#color</a>
+                        
+                          <a href="symbols/A3.Core.Objects.Lights.Light.html#color">A3.Core.Objects.Lights.Light#color</a>
+                        
+                          <a href="symbols/A3.Core.Objects.Lights.Light.html#color">A3.Core.Objects.Lights.Light#color</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">colorDataSize</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Mesh.html#colorDataSize">A3.Core.Objects.Mesh#colorDataSize</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">convertNumber</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Shaders.ShaderLibrary.html#-convertNumber">A3.Core.Render.Shaders.ShaderLibrary-convertNumber</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">convertVector</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Shaders.ShaderLibrary.html#-convertVector">A3.Core.Render.Shaders.ShaderLibrary-convertVector</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">copy</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Matrix4.html#copy">A3.Core.Math.Matrix4#copy</a>
+                        
+                          <a href="symbols/A3.Core.Math.Vector2.html#copy">A3.Core.Math.Vector2#copy</a>
+                        
+                          <a href="symbols/A3.Core.Math.Vector3.html#copy">A3.Core.Math.Vector3#copy</a>
+                        
+                          <a href="symbols/A3.Core.Objects.Geometric.Vertex.html#copy">A3.Core.Objects.Geometric.Vertex#copy</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">copyMatrix4</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Matrix3.html#copyMatrix4">A3.Core.Math.Matrix3#copyMatrix4</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">create</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Renderer.html#create">A3.Core.Render.Renderer#create</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">cross</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Vector3.html#cross">A3.Core.Math.Vector3#cross</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">Cube</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Primitives.Cube.html">A3.Core.Objects.Primitives.Cube</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">customAttributes</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Shaders.Shader.html#customAttributes">A3.Core.Render.Shaders.Shader#customAttributes</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">customUniforms</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Shaders.Shader.html#customUniforms">A3.Core.Render.Shaders.Shader#customUniforms</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">depthTest</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Mesh.html#depthTest">A3.Core.Objects.Mesh#depthTest</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">determinant</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Matrix3.html#determinant">A3.Core.Math.Matrix3#determinant</a>
+                        
+                          <a href="symbols/A3.Core.Math.Matrix4.html#determinant">A3.Core.Math.Matrix4#determinant</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">DirectionalLight</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Lights.DirectionalLight.html">A3.Core.Objects.Lights.DirectionalLight</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">dirty</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#dirty">A3.Core.Object3D#dirty</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#dirty">A3.Core.Object3D#dirty</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#dirty">A3.Core.Object3D#dirty</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#dirty">A3.Core.Object3D#dirty</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#dirty">A3.Core.Object3D#dirty</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#dirty">A3.Core.Object3D#dirty</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#dirty">A3.Core.Object3D#dirty</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#dirty">A3.Core.Object3D#dirty</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#dirty">A3.Core.Object3D#dirty</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#dirty">A3.Core.Object3D#dirty</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#dirty">A3.Core.Object3D#dirty</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">domElement</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Renderer.html#domElement">A3.Core.Render.Renderer#domElement</a>
+                        
+                          <a href="symbols/A3.Core.Render.Textures.Texture.html#domElement">A3.Core.Render.Textures.Texture#domElement</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">dot</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Vector2.html#dot">A3.Core.Math.Vector2#dot</a>
+                        
+                          <a href="symbols/A3.Core.Math.Vector3.html#dot">A3.Core.Math.Vector3#dot</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">dynamic</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Mesh.html#dynamic">A3.Core.Objects.Mesh#dynamic</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">elementArray</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Geometric.Face3.html#elementArray">A3.Core.Objects.Geometric.Face3#elementArray</a>
+                        
+                          <a href="symbols/A3.Core.Objects.Geometric.Face4.html#elementArray">A3.Core.Objects.Geometric.Face4#elementArray</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">EnvironmentMap</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Textures.EnvironmentMap.html">A3.Core.Render.Textures.EnvironmentMap</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">environmentMap</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Shaders.Shader.html#environmentMap">A3.Core.Render.Shaders.Shader#environmentMap</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">Face3</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Geometric.Face3.html">A3.Core.Objects.Geometric.Face3</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">Face4</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Geometric.Face4.html">A3.Core.Objects.Geometric.Face4</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">fallOffDistance</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Lights.PointLight.html#fallOffDistance">A3.Core.Objects.Lights.PointLight#fallOffDistance</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">fragmentShaderSource</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Shaders.Shader.html#fragmentShaderSource">A3.Core.Render.Shaders.Shader#fragmentShaderSource</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">frustum</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Matrix4.html#frustum">A3.Core.Math.Matrix4#frustum</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">geometry</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Mesh.html#geometry">A3.Core.Objects.Mesh#geometry</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">gl</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Renderer.html#gl">A3.Core.Render.Renderer#gl</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">identity</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Matrix4.html#identity">A3.Core.Math.Matrix4#identity</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">index</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Textures.EnvironmentMap.html#index">A3.Core.Render.Textures.EnvironmentMap#index</a>
+                        
+                          <a href="symbols/A3.Core.Render.Textures.Texture.html#index">A3.Core.Render.Textures.Texture#index</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">initialize</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Shaders.Shader.html#initialize">A3.Core.Render.Shaders.Shader#initialize</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">initialized</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Shaders.Shader.html#initialized">A3.Core.Render.Shaders.Shader#initialized</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">inverseMatrix</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Camera.BasicCamera.html#inverseMatrix">A3.Core.Camera.BasicCamera#inverseMatrix</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">invert</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Matrix3.html#invert">A3.Core.Math.Matrix3#invert</a>
+                        
+                          <a href="symbols/A3.Core.Math.Matrix4.html#invert">A3.Core.Math.Matrix4#invert</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">isDirty</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Vector2.html#isDirty">A3.Core.Math.Vector2#isDirty</a>
+                        
+                          <a href="symbols/A3.Core.Math.Vector3.html#isDirty">A3.Core.Math.Vector3#isDirty</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">isReady</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Textures.EnvironmentMap.html#isReady">A3.Core.Render.Textures.EnvironmentMap#isReady</a>
+                        
+                          <a href="symbols/A3.Core.Render.Textures.Texture.html#isReady">A3.Core.Render.Textures.Texture#isReady</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">length</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Vector2.html#length">A3.Core.Math.Vector2#length</a>
+                        
+                          <a href="symbols/A3.Core.Math.Vector3.html#length">A3.Core.Math.Vector3#length</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">Light</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Lights.Light.html">A3.Core.Objects.Lights.Light</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">lights</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Renderer.html#lights">A3.Core.Render.Renderer#lights</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">load</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Remote.MeshLoader.html#load">A3.Core.Remote.MeshLoader#load</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">loaded</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Textures.EnvironmentMap.html#-loaded">A3.Core.Render.Textures.EnvironmentMap-loaded</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">location</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Lights.Light.html#location">A3.Core.Objects.Lights.Light#location</a>
+                        
+                          <a href="symbols/A3.Core.Objects.Lights.Light.html#location">A3.Core.Objects.Lights.Light#location</a>
+                        
+                          <a href="symbols/A3.Core.Objects.Lights.Light.html#location">A3.Core.Objects.Lights.Light#location</a>
+                        
+                          <a href="symbols/A3.Core.Objects.Lights.Light.html#location">A3.Core.Objects.Lights.Light#location</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">lookAt</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#lookAt">A3.Core.Object3D#lookAt</a>
+                        
+                          <a href="symbols/A3.Core.Math.Matrix4.html#lookAt">A3.Core.Math.Matrix4#lookAt</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#lookAt">A3.Core.Object3D#lookAt</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#lookAt">A3.Core.Object3D#lookAt</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#lookAt">A3.Core.Object3D#lookAt</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#lookAt">A3.Core.Object3D#lookAt</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#lookAt">A3.Core.Object3D#lookAt</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#lookAt">A3.Core.Object3D#lookAt</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#lookAt">A3.Core.Object3D#lookAt</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#lookAt">A3.Core.Object3D#lookAt</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#lookAt">A3.Core.Object3D#lookAt</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#lookAt">A3.Core.Object3D#lookAt</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">matrix</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#matrix">A3.Core.Object3D#matrix</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#matrix">A3.Core.Object3D#matrix</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#matrix">A3.Core.Object3D#matrix</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#matrix">A3.Core.Object3D#matrix</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#matrix">A3.Core.Object3D#matrix</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#matrix">A3.Core.Object3D#matrix</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#matrix">A3.Core.Object3D#matrix</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#matrix">A3.Core.Object3D#matrix</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#matrix">A3.Core.Object3D#matrix</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#matrix">A3.Core.Object3D#matrix</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#matrix">A3.Core.Object3D#matrix</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">Matrix3</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Matrix3.html">A3.Core.Math.Matrix3</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">Matrix4</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Matrix4.html">A3.Core.Math.Matrix4</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">matrixNormals</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Mesh.html#matrixNormals">A3.Core.Objects.Mesh#matrixNormals</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">matrixWorld</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#matrixWorld">A3.Core.Object3D#matrixWorld</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#matrixWorld">A3.Core.Object3D#matrixWorld</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#matrixWorld">A3.Core.Object3D#matrixWorld</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#matrixWorld">A3.Core.Object3D#matrixWorld</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#matrixWorld">A3.Core.Object3D#matrixWorld</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#matrixWorld">A3.Core.Object3D#matrixWorld</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#matrixWorld">A3.Core.Object3D#matrixWorld</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#matrixWorld">A3.Core.Object3D#matrixWorld</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#matrixWorld">A3.Core.Object3D#matrixWorld</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#matrixWorld">A3.Core.Object3D#matrixWorld</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#matrixWorld">A3.Core.Object3D#matrixWorld</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">Mesh</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Mesh.html">A3.Core.Objects.Mesh</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">MeshLoader</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Remote.MeshLoader.html">A3.Core.Remote.MeshLoader</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">multiply</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Matrix4.html#multiply">A3.Core.Math.Matrix4#multiply</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">multiplyByScalar</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Vector2.html#multiplyByScalar">A3.Core.Math.Vector2#multiplyByScalar</a>
+                        
+                          <a href="symbols/A3.Core.Math.Vector3.html#multiplyByScalar">A3.Core.Math.Vector3#multiplyByScalar</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">name</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#name">A3.Core.Object3D#name</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#name">A3.Core.Object3D#name</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#name">A3.Core.Object3D#name</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#name">A3.Core.Object3D#name</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#name">A3.Core.Object3D#name</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#name">A3.Core.Object3D#name</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#name">A3.Core.Object3D#name</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#name">A3.Core.Object3D#name</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#name">A3.Core.Object3D#name</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#name">A3.Core.Object3D#name</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#name">A3.Core.Object3D#name</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">negate</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Vector2.html#negate">A3.Core.Math.Vector2#negate</a>
+                        
+                          <a href="symbols/A3.Core.Math.Vector3.html#negate">A3.Core.Math.Vector3#negate</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">normal</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Geometric.Face3.html#normal">A3.Core.Objects.Geometric.Face3#normal</a>
+                        
+                          <a href="symbols/A3.Core.Objects.Geometric.Face4.html#normal">A3.Core.Objects.Geometric.Face4#normal</a>
+                        
+                          <a href="symbols/A3.Core.Objects.Geometric.Vertex.html#normal">A3.Core.Objects.Geometric.Vertex#normal</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">normalArray</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Geometric.Vertex.html#normalArray">A3.Core.Objects.Geometric.Vertex#normalArray</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">normalDataSize</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Mesh.html#normalDataSize">A3.Core.Objects.Mesh#normalDataSize</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">normalize</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Vector2.html#normalize">A3.Core.Math.Vector2#normalize</a>
+                        
+                          <a href="symbols/A3.Core.Math.Vector3.html#normalize">A3.Core.Math.Vector3#normalize</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">nx</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Textures.EnvironmentMap.html#nx">A3.Core.Render.Textures.EnvironmentMap#nx</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">ny</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Textures.EnvironmentMap.html#ny">A3.Core.Render.Textures.EnvironmentMap#ny</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">nz</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Textures.EnvironmentMap.html#nz">A3.Core.Render.Textures.EnvironmentMap#nz</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">Object3D</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Object3D.html">A3.Core.Object3D</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">opacity</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Mesh.html#opacity">A3.Core.Objects.Mesh#opacity</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">opaqueRenderableObjects</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Renderer.html#opaqueRenderableObjects">A3.Core.Render.Renderer#opaqueRenderableObjects</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">parent</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#parent">A3.Core.Object3D#parent</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#parent">A3.Core.Object3D#parent</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#parent">A3.Core.Object3D#parent</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#parent">A3.Core.Object3D#parent</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#parent">A3.Core.Object3D#parent</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#parent">A3.Core.Object3D#parent</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#parent">A3.Core.Object3D#parent</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#parent">A3.Core.Object3D#parent</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#parent">A3.Core.Object3D#parent</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#parent">A3.Core.Object3D#parent</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#parent">A3.Core.Object3D#parent</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">perspective</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Matrix4.html#perspective">A3.Core.Math.Matrix4#perspective</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">Plane</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Primitives.Plane.html">A3.Core.Objects.Primitives.Plane</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">PointLight</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Lights.PointLight.html">A3.Core.Objects.Lights.PointLight</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">position</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#position">A3.Core.Object3D#position</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#position">A3.Core.Object3D#position</a>
+                        
+                          <a href="symbols/A3.Core.Objects.Geometric.Vertex.html#position">A3.Core.Objects.Geometric.Vertex#position</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#position">A3.Core.Object3D#position</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#position">A3.Core.Object3D#position</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#position">A3.Core.Object3D#position</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#position">A3.Core.Object3D#position</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#position">A3.Core.Object3D#position</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#position">A3.Core.Object3D#position</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#position">A3.Core.Object3D#position</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#position">A3.Core.Object3D#position</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#position">A3.Core.Object3D#position</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">positionArray</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Geometric.Vertex.html#positionArray">A3.Core.Objects.Geometric.Vertex#positionArray</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">processEnvironmentMap</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Renderer.html#processEnvironmentMap">A3.Core.Render.Renderer#processEnvironmentMap</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">processTexture</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Renderer.html#processTexture">A3.Core.Render.Renderer#processTexture</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">projectionMatrix</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Camera.BasicCamera.html#projectionMatrix">A3.Core.Camera.BasicCamera#projectionMatrix</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">px</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Textures.EnvironmentMap.html#px">A3.Core.Render.Textures.EnvironmentMap#px</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">py</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Textures.EnvironmentMap.html#py">A3.Core.Render.Textures.EnvironmentMap#py</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">pz</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Textures.EnvironmentMap.html#pz">A3.Core.Render.Textures.EnvironmentMap#pz</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">remove</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#remove">A3.Core.Object3D#remove</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#remove">A3.Core.Object3D#remove</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#remove">A3.Core.Object3D#remove</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#remove">A3.Core.Object3D#remove</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#remove">A3.Core.Object3D#remove</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#remove">A3.Core.Object3D#remove</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#remove">A3.Core.Object3D#remove</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#remove">A3.Core.Object3D#remove</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#remove">A3.Core.Object3D#remove</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#remove">A3.Core.Object3D#remove</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#remove">A3.Core.Object3D#remove</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">render</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Renderer.html#render">A3.Core.Render.Renderer#render</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">Renderer</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Renderer.html">A3.Core.Render.Renderer</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">renderObjectArray</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Renderer.html#renderObjectArray">A3.Core.Render.Renderer#renderObjectArray</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">renderType</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Mesh.html#renderType">A3.Core.Objects.Mesh#renderType</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">replaceChunks</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Shaders.ShaderLibrary.html#-replaceChunks">A3.Core.Render.Shaders.ShaderLibrary-replaceChunks</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">resetDirty</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Vector2.html#resetDirty">A3.Core.Math.Vector2#resetDirty</a>
+                        
+                          <a href="symbols/A3.Core.Math.Vector3.html#resetDirty">A3.Core.Math.Vector3#resetDirty</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">resize</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Renderer.html#resize">A3.Core.Render.Renderer#resize</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">rgb</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Vector4.html#rgb">A3.Core.Math.Vector4#rgb</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">rotation</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#rotation">A3.Core.Object3D#rotation</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#rotation">A3.Core.Object3D#rotation</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#rotation">A3.Core.Object3D#rotation</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#rotation">A3.Core.Object3D#rotation</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#rotation">A3.Core.Object3D#rotation</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#rotation">A3.Core.Object3D#rotation</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#rotation">A3.Core.Object3D#rotation</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#rotation">A3.Core.Object3D#rotation</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#rotation">A3.Core.Object3D#rotation</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#rotation">A3.Core.Object3D#rotation</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#rotation">A3.Core.Object3D#rotation</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">scale</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#scale">A3.Core.Object3D#scale</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#scale">A3.Core.Object3D#scale</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#scale">A3.Core.Object3D#scale</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#scale">A3.Core.Object3D#scale</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#scale">A3.Core.Object3D#scale</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#scale">A3.Core.Object3D#scale</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#scale">A3.Core.Object3D#scale</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#scale">A3.Core.Object3D#scale</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#scale">A3.Core.Object3D#scale</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#scale">A3.Core.Object3D#scale</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#scale">A3.Core.Object3D#scale</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">scaleByScalar</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Matrix3.html#scaleByScalar">A3.Core.Math.Matrix3#scaleByScalar</a>
+                        
+                          <a href="symbols/A3.Core.Math.Matrix4.html#scaleByScalar">A3.Core.Math.Matrix4#scaleByScalar</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">scaleByVector</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Matrix4.html#scaleByVector">A3.Core.Math.Matrix4#scaleByVector</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">set</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Matrix3.html#set">A3.Core.Math.Matrix3#set</a>
+                        
+                          <a href="symbols/A3.Core.Math.Matrix4.html#set">A3.Core.Math.Matrix4#set</a>
+                        
+                          <a href="symbols/A3.Core.Math.Vector2.html#set">A3.Core.Math.Vector2#set</a>
+                        
+                          <a href="symbols/A3.Core.Math.Vector3.html#set">A3.Core.Math.Vector3#set</a>
+                        
+                          <a href="symbols/A3.Core.Math.Vector4.html#set">A3.Core.Math.Vector4#set</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">setRotationFromVector</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Matrix4.html#setRotationFromVector">A3.Core.Math.Matrix4#setRotationFromVector</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">setTranslationFromVector</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Matrix4.html#setTranslationFromVector">A3.Core.Math.Matrix4#setTranslationFromVector</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">Shader</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Shaders.Shader.html">A3.Core.Render.Shaders.Shader</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">shader</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Mesh.html#shader">A3.Core.Objects.Mesh#shader</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">ShaderLibrary</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Shaders.ShaderLibrary.html">A3.Core.Render.Shaders.ShaderLibrary</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">shaderProgram</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Shaders.Shader.html#shaderProgram">A3.Core.Render.Shaders.Shader#shaderProgram</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">Sphere</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Primitives.Sphere.html">A3.Core.Objects.Primitives.Sphere</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">subtract</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Vector2.html#subtract">A3.Core.Math.Vector2#subtract</a>
+                        
+                          <a href="symbols/A3.Core.Math.Vector3.html#subtract">A3.Core.Math.Vector3#subtract</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">switchRenderMode</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Renderer.html#switchRenderMode">A3.Core.Render.Renderer#switchRenderMode</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">target</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#target">A3.Core.Object3D#target</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#target">A3.Core.Object3D#target</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#target">A3.Core.Object3D#target</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#target">A3.Core.Object3D#target</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#target">A3.Core.Object3D#target</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#target">A3.Core.Object3D#target</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#target">A3.Core.Object3D#target</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#target">A3.Core.Object3D#target</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#target">A3.Core.Object3D#target</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#target">A3.Core.Object3D#target</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#target">A3.Core.Object3D#target</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">texture</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Shaders.Shader.html#texture">A3.Core.Render.Shaders.Shader#texture</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">Texture</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Textures.Texture.html">A3.Core.Render.Textures.Texture</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">toArray</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Matrix3.html#toArray">A3.Core.Math.Matrix3#toArray</a>
+                        
+                          <a href="symbols/A3.Core.Math.Matrix4.html#toArray">A3.Core.Math.Matrix4#toArray</a>
+                        
+                          <a href="symbols/A3.Core.Math.Vector2.html#toArray">A3.Core.Math.Vector2#toArray</a>
+                        
+                          <a href="symbols/A3.Core.Math.Vector3.html#toArray">A3.Core.Math.Vector3#toArray</a>
+                        
+                          <a href="symbols/A3.Core.Math.Vector4.html#toArray">A3.Core.Math.Vector4#toArray</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">toElementArray</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Geometric.Face3.html#toElementArray">A3.Core.Objects.Geometric.Face3#toElementArray</a>
+                        
+                          <a href="symbols/A3.Core.Objects.Geometric.Face4.html#toElementArray">A3.Core.Objects.Geometric.Face4#toElementArray</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">toNormalArray</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Geometric.Vertex.html#toNormalArray">A3.Core.Objects.Geometric.Vertex#toNormalArray</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">toPositionArray</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Geometric.Vertex.html#toPositionArray">A3.Core.Objects.Geometric.Vertex#toPositionArray</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">toString</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Matrix4.html#toString">A3.Core.Math.Matrix4#toString</a>
+                        
+                          <a href="symbols/A3.Core.Math.Vector2.html#toString">A3.Core.Math.Vector2#toString</a>
+                        
+                          <a href="symbols/A3.Core.Math.Vector3.html#toString">A3.Core.Math.Vector3#toString</a>
+                        
+                          <a href="symbols/A3.Core.Math.Vector4.html#toString">A3.Core.Math.Vector4#toString</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">transparent</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Mesh.html#transparent">A3.Core.Objects.Mesh#transparent</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">transparentRenderableObjects</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Renderer.html#transparentRenderableObjects">A3.Core.Render.Renderer#transparentRenderableObjects</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">transpose</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Matrix3.html#transpose">A3.Core.Math.Matrix3#transpose</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">type</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Lights.Light.html#type">A3.Core.Objects.Lights.Light#type</a>
+                        
+                          <a href="symbols/A3.Core.Objects.Lights.Light.html#type">A3.Core.Objects.Lights.Light#type</a>
+                        
+                          <a href="symbols/A3.Core.Objects.Lights.Light.html#type">A3.Core.Objects.Lights.Light#type</a>
+                        
+                          <a href="symbols/A3.Core.Objects.Lights.Light.html#type">A3.Core.Objects.Lights.Light#type</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">update</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#update">A3.Core.Object3D#update</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#update">A3.Core.Object3D#update</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#update">A3.Core.Object3D#update</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#update">A3.Core.Object3D#update</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#update">A3.Core.Object3D#update</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#update">A3.Core.Object3D#update</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#update">A3.Core.Object3D#update</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#update">A3.Core.Object3D#update</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#update">A3.Core.Object3D#update</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#update">A3.Core.Object3D#update</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#update">A3.Core.Object3D#update</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">Utility</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Utility.html">A3.Core.Utility</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">uvDataSize</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Mesh.html#uvDataSize">A3.Core.Objects.Mesh#uvDataSize</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">v1</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Geometric.Face3.html#v1">A3.Core.Objects.Geometric.Face3#v1</a>
+                        
+                          <a href="symbols/A3.Core.Objects.Geometric.Face4.html#v1">A3.Core.Objects.Geometric.Face4#v1</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">v2</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Geometric.Face3.html#v2">A3.Core.Objects.Geometric.Face3#v2</a>
+                        
+                          <a href="symbols/A3.Core.Objects.Geometric.Face4.html#v2">A3.Core.Objects.Geometric.Face4#v2</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">v3</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Geometric.Face3.html#v3">A3.Core.Objects.Geometric.Face3#v3</a>
+                        
+                          <a href="symbols/A3.Core.Objects.Geometric.Face4.html#v3">A3.Core.Objects.Geometric.Face4#v3</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">v4</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Geometric.Face4.html#v4">A3.Core.Objects.Geometric.Face4#v4</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">Vector2</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Vector2.html">A3.Core.Math.Vector2</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">Vector3</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Vector3.html">A3.Core.Math.Vector3</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">Vector4</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Vector4.html">A3.Core.Math.Vector4</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">Vertex</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Geometric.Vertex.html">A3.Core.Objects.Geometric.Vertex</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">vertexDataSize</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Objects.Mesh.html#vertexDataSize">A3.Core.Objects.Mesh#vertexDataSize</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">vertexShaderSource</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Render.Shaders.Shader.html#vertexShaderSource">A3.Core.Render.Shaders.Shader#vertexShaderSource</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">visible</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#visible">A3.Core.Object3D#visible</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#visible">A3.Core.Object3D#visible</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#visible">A3.Core.Object3D#visible</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#visible">A3.Core.Object3D#visible</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#visible">A3.Core.Object3D#visible</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#visible">A3.Core.Object3D#visible</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#visible">A3.Core.Object3D#visible</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#visible">A3.Core.Object3D#visible</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#visible">A3.Core.Object3D#visible</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#visible">A3.Core.Object3D#visible</a>
+                        
+                          <a href="symbols/A3.Core.Object3D.html#visible">A3.Core.Object3D#visible</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">xyz</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Vector4.html#xyz">A3.Core.Math.Vector4#xyz</a>
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr class="symbolEntry">
+                      <td class="symbolName">zero</td>
+                      <td>
+                        
+                          <a href="symbols/A3.Core.Math.Matrix4.html#zero">A3.Core.Math.Matrix4#zero</a>
+                        
+                          <a href="symbols/A3.Core.Math.Vector2.html#zero">A3.Core.Math.Vector2#zero</a>
+                        
+                          <a href="symbols/A3.Core.Math.Vector3.html#zero">A3.Core.Math.Vector3#zero</a>
+                        
+                          <a href="symbols/A3.Core.Math.Vector4.html#zero">A3.Core.Math.Vector4#zero</a>
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+            </div>
+            <hr />
+		</div>
+		<div class="fineprint" style="clear:both;text-align:center">
+			
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blankt">JsDoc Toolkit</a> 2.4.0 on Sat Sep 03 2011 17:23:59 GMT+0200 (CEST)
+		</div>
+	</body>
+</html>
+

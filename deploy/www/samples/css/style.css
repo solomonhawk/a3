@@ -1,0 +1,125 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+#wrapper {
+  display: box;
+  display: -moz-box;
+  display: -webkit-box;
+  box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  height: 100%;
+  width: 100%;
+}
+
+#container {
+  box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-box-flex: 1;
+  width: 100%;
+  cursor: pointer;
+  background: #0C0D0E url(../images/dark-background.png) no-repeat center center;
+}
+
+#container.light {
+  background: #E4E4E4 url(../images/light-background.png) no-repeat center center;
+}
+
+#container.black {
+  background: #000000;
+}
+
+#loading {
+  background: url(../images/loading.png) no-repeat center center;
+  width: 162px;
+  height: 50px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -81px;
+  margin-top: -105px;
+}
+
+#loading.hidden {
+     -moz-transition: opacity 0.3s ease-out;  
+       -o-transition: opacity 0.3s ease-out;  
+  -webkit-transition: opacity 0.3s ease-out;  
+      -ms-transition: opacity 0.3s ease-out;  
+          transition: opacity 0.3s ease-out;  
+  opacity: 0;
+}
+
+#footer {
+  border-top: 1px solid #44454A;
+  height: 114px;
+  width: 100%;
+  position: relative;
+  background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0.9, rgb(19,20,26)),
+      color-stop(1, rgb(33,34,40))
+  );
+  background-image: -moz-linear-gradient(
+      center bottom,
+      rgb(19,20,26) 90%,
+      rgb(33,34,40) 100%
+  );
+}
+
+#footer:after {
+  content: '';
+  width: 19px;
+  height: 115px;
+  background: url(../images/background-block.jpg);
+  position: absolute;
+  top: -1px;
+  left: 0;
+}
+
+#footer h1 {
+  color: #FFF;
+  font-size: 33px;
+  font-weight: 100;
+  margin: 17px 0 10px 0;
+  padding: 0 20px 0 40px;
+  line-height: 100%;
+  text-transform: uppercase;
+  text-shadow: 0px 1px 0px #000;
+  font-weight: bold;
+  text-align: middle;
+}
+
+#footer h1 span {
+  font-weight: 100;
+  padding-right: 6px;
+  margin-right: 9px;
+  border-right: 2px solid #909F8C;
+  color: #5D7575;
+}
+
+#footer p {
+  color: #9EB1B1;
+  font-size: 12px;
+  width: 270px;
+  margin: 0;
+  padding: 0 40px;
+  line-height: 150%;
+}
+
+#footer p a {
+  color: #CCC;
+  text-decoration: none;
+  border-bottom: 1px solid #CCC;
+}
+
+#footer p a:hover {
+  color: #FFF;
+  border-bottom: 1px solid #FFF;
+}
