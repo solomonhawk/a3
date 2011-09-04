@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="A3" default="build">
+
+	<taskdef resource="net/sf/antcontrib/antlib.xml" classpath="ant-contrib/ant-contrib-1.0b3.jar" />
+
+	<!--
+	Build file for A3
+	=================
+
+	Huge thanks to @millermedeiros for putting together
+	such an awesome build script and sharing it on GitHub,
+	it is effectively the basis for this one.
+
+	@see https://github.com/millermedeiros/js-signals/blob/master/build.xml
+
+	-->
+	<property file="properties/build.properties" />
+
+	<target name="compileShaders">
+		<script language="javascript">
+			<![CDATA[
+
+				importClass(java.io.File);
+				importClass(java.util.Scanner);
+				importClass(java.util.regex.Pattern);
+				importClass(java.util.regex.Matcher);
+
+				function createShaderString(path) {
+					var scanner = new Scanner(new File(path));
+					scanner.useDelimiter("$");
+
+					var shaderString 			= scanner.next();
+					var patternLines			= Pattern.compile("\\r?\\n");
+					var patternBlankLines		= Pattern.compile("\\\\n\\s*\\\\n");
+					var patternWhiteSpace		= Pattern.compile("\\s+");
+					var matcherLines			= patternLines.matcher(shaderString);
+					shaderString				= matcherLines.replaceAll("\\\\n");
+					var matcherBlankLines		= patternBlankLines.matcher(shaderString);
+					shaderString				= matcherBlankLines.replaceAll("\\\\n");
+					var matcherWhiteSpace	= patternWhiteSpace.matcher(shaderString);
+					shaderString				= matcherWhiteSpace.replaceAll(" ");
+					return shaderString;
+				}
+
+				function createShader(name, vsPath, fsPath) {
+					var shader = "\"" + name + "\": {";
+					shader += "\"vertexShader\": \"" + createShaderString(vsPath) + "\",";
+					shader += "\"fragmentShader\": \"" + createShaderString(fsPath) + "\"}";
+					return shader;
+				}
+
+				var shaders = "A3.Core.Render.Shaders.ShaderLibrary.Shaders = {";
+				shaders += createShader("Basic", "../src/shaders/basic/vertex.glsl", "../src/shaders/basic/fragment.glsl") + ",";
+				shaders += createShader("Pink", "../src/shaders/pink/vertex.glsl", "../src/shaders/pink/fragment.glsl") + ",";
+				shaders += createShader("Particle", "../src/shaders/particle/vertex.glsl", "../src/shaders/particle/fragment.glsl") + ",";
+				shaders += createShader("Normals", "../src/shaders/normals/vertex.glsl", "../src/shaders/normals/fragment.glsl") + ",";
+				shaders += createShader("PhongLambert", "../src/shaders/phonglambert/vertex.glsl", "../src/shaders/phonglambert/fragment.glsl");
+				shaders += "};\n";
+				project.setProperty("shaders.compiled", shaders);
+
+				var chunks = "A3.Core.Render.Shaders.ShaderLibrary.Chunks = {";
+				chunks += "\"Lighting\":\"" + createShaderString("../src/shaders/chunks/lighting.glsl") + "\"";
+				chunks += "};\n";
+				project.setProperty("chunks.compiled", chunks);
+			]]>
+		</script>
+	</target>
+
+	<!-- Documents the JS -->
+	<target name="document" depends="minify">
+
+		<echo>Documenting...</echo>
+
+		<!-- Run JSdoc-toolkit -->
+		<apply executable="java">
+			<filelist dir="${deploy.dir}">
+				<file name="${deploy.file}" />
+			</filelist>
+			<arg line="-jar" />
+			<arg path="${jsdoc-toolkit.dir}/jsrun.jar" />
+			<arg value="${jsdoc-toolkit.dir}/app/run.js" />
+			<arg value="-D=title:A3" />
+			<arg value="-t=${jsdoc-toolkit.dir}/templates/jsdoc-simple" />
+			<arg value="-d=${docs.dir}" />
+		</apply>
+
+		<echo>Done</echo>
+
+	</target>
+
+	<!-- Minifies the JS -->
+	<target name="minify" depends="compileShaders">
+
+		<echo>Minifying ${deploy.file} to ${deploy.min.file}...</echo>
+
+		<!-- build a concatenated version -->
+		<concat destfile="${deploy.dir}\${deploy.file}">
+			<filelist dir="${src.dir}">
+
+				<!-- Namespace -->
+				<file name="js/A3.js" />
+
+				<!-- Math -->
+				<file name="js/core/math/Matrix3.js" />
+				<file name="js/core/math/Matrix4.js" />
+				<file name="js/core/math/Vector2.js" />
+				<file name="js/core/math/Vector3.js" />
+				<file name="js/core/math/Vector4.js" />
+
+				<!-- Basic -->
+				<file name="js/core/Object3D.js" />
+				<file name="js/core/Utility.js" />
+
+				<!-- Engine -->
+				<file name="js/core/render/textures/Texture.js" />
+				<file name="js/core/render/textures/EnvironmentMap.js" />
+				<file name="js/core/render/shaders/Shader.js" />
+				<file name="js/core/render/shaders/ShaderLibrary.js" />
+
+				<!-- Engine -->
+				<file name="js/core/render/Renderer.js" />
+				<file name="js/core/scene/BasicScene.js" />
+				<file name="js/core/camera/BasicCamera.js" />
+
+				<!-- Mesh & Geometry -->
+				<file name="js/core/objects/Mesh.js" />
+				<file name="js/core/objects/geometric/Vertex.js" />
+				<file name="js/core/objects/geometric/Face3.js" />
+				<file name="js/core/objects/geometric/Face4.js" />
+				<file name="js/core/objects/geometric/Geometry.js" />
+
+				<!-- Lights -->
+				<file name="js/core/objects/lights/Light.js" />
+				<file name="js/core/objects/lights/AmbientLight.js" />
+				<file name="js/core/objects/lights/DirectionalLight.js" />
+				<file name="js/core/objects/lights/PointLight.js" />
+
+				<!-- Primitives -->
+				<file name="js/core/objects/primitives/Cube.js" />
+				<file name="js/core/objects/primitives/Sphere.js" />
+				<file name="js/core/objects/primitives/Plane.js" />
+
+				<!-- Remote -->
+				<file name="js/core/remote/MeshLoader.js" />
+			</filelist>
+		</concat>
+
+		<!-- Add on the shaders -->
+		<echo file="${deploy.dir}\${deploy.file}" append="true">${chunks.compiled}</echo>
+		<echo file="${deploy.dir}\${deploy.file}" append="true">${shaders.compiled}</echo>
+
+
+		<!-- now compress with YUI -->
+		<apply executable="java" parallel="false" verbose="true" dest="${deploy.dir}">
+			<fileset dir="${deploy.dir}">
+				<include name="${deploy.file}" />
+			</fileset>
+			<arg line="-jar" />
+			<arg path="${yuicompressor.jar}" />
+			<arg value="--charset" />
+			<arg value="UTF8" />
+			<arg value="--line-break" />
+			<arg value="4000" />
+			<arg value="-v" />
+			<arg value="-o" />
+			<targetfile />
+			<mapper type="glob" from="${deploy.file}" to="${deploy.min.file}" />
+		</apply>
+
+		<echo>Done</echo>
+
+	</target>
+
+	<target name="jsLint" depends="minify">
+		<echo>Linting...</echo>
+
+		<!-- Run JSLint and be staggered if you pass -->
+		<apply executable="java" verbose="true">
+			<filelist dir="${deploy.dir}">
+				<file name="${deploy.file}" />
+			</filelist>
+			<arg line="-jar" />
+			<arg path="${jslint.jar}" />
+		</apply>
+
+		<echo>Done</echo>
+
+	</target>
+
+	<target name="clean">
+		<echo>Cleaning...</echo>
+
+		<!-- Cleanse away! -->
+		<delete>
+			<filelist dir="${deploy.dir}">
+				<file name="${deploy.file}" />
+			</filelist>
+		</delete>
+
+		<echo>Done</echo>
+
+	</target>
+
+	<target name="license">
+
+		<echo>Licensing...</echo>
+
+		<!-- Pop on the license -->
+		<loadfile property="license.txt" srcFile="license.txt" />
+		<loadfile property="source.code" srcFile="${deploy.dir}\${deploy.min.file}" />
+
+		<echo file="${deploy.dir}\${deploy.min.file}">${license.txt}${source.code}</echo>
+		<echo>Done</echo>
+
+	</target>
+
+	<target name="build" depends="minify,jsLint"></target>
+	<target name="buildAll" depends="minify,jsLint,document,license"></target>
+
+</project>
