@@ -1,6 +1,6 @@
 /**
  * A3 - A simple 3D engine
- * 
+ *
  * @version 0.1
  * @author Paul Lewis
  */
@@ -10,13 +10,13 @@ var A3 = {};
  * A3 Constants
  */
 A3.Constants = {
-	
+
 	/**
 	 * @description The limit to the number of lights in the scene
 	 * @type Number
 	 */
 	MAX_LIGHTS: 4,
-	 
+
 	/**
 	 * @description The light types
 	 * @type Object
@@ -27,7 +27,7 @@ A3.Constants = {
 		DIRECTIONAL: 2,
 		POINT: 4
 	},
-	
+
 	/**
 	 * @description How the mesh should be rendered, i.e. solid / particle
 	 * @type Object
@@ -36,7 +36,7 @@ A3.Constants = {
 		SOLID: 1,
 		PARTICLES: 2
 	},
-	
+
 	/**
 	 * @description How the mesh should be rendered, i.e. normal / additive
 	 * @type Object
@@ -82,3 +82,9 @@ A3.Core.Render.Textures = {};
 
 /** Core Scene */
 A3.Core.Scene = {};
+
+/** Addons */
+A3.Addon = {};
+
+/** Addons: Intersection */
+A3.Addon.Intersection = {};

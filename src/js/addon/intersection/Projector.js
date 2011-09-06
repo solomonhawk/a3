@@ -21,7 +21,7 @@ A3.Addon.Intersection.Projector.prototype = {
   /**
    * Takes a vector and unprojects it from the screen space out into the world space
    *
-   * @param {A3.Core.Math.Vector2} vector The vector to unproject
+   * @param {A3.Core.Math.Vector2} vector The vector to unproject, x should be -1 to 1 (left to right), y should 1 to -1 (top to bottom); WebGL Y coordinates are &quot;inverted&quot;
    * @see <a href="http://msdn.microsoft.com/en-us/library/microsoft.xna.framework.graphics.viewport.unproject.aspx">MSDN Unproject Vector</a> has a good breakdown
    */
   unproject: function(vector) {
@@ -49,6 +49,6 @@ A3.Addon.Intersection.Projector.prototype = {
 
     return end.subtract(start);
   }
-}
+};
 
 A3.Projector = A3.Addon.Intersection.Projector;

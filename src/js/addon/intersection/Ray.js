@@ -11,6 +11,6 @@ A3.Addon.Intersection.Ray = function(origin, direction) {
   this.origin = origin;
   this.direction = direction;
 
-}
+};
 
 A3.Ray = A3.Addon.Intersection.Ray;
