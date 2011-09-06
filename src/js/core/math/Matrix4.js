@@ -288,6 +288,27 @@ A3.Core.Math.Matrix4.prototype = {
 	},
 
 	/**
+	 * Multiplies a Vector3 by this matrix, for the purposes of unprojection. <strong>Please note, this affects the vector</strong>
+	 *
+	 * @param {A3.Core.Math.Vector3} vector The vector to multiply by this matrix
+	 */
+	multiplyVector3: function(vector) {
+
+		// we assume that this is actually a 4D vector with a w component of 1
+		var vx = vector.x, vy = vector.y, vz = vector.z,
+			vw = 1 / (this.m41 * vx * this.m42 * vy + this.m43 * vz + this.m44);
+
+		vector.x = this.m11 * vx + this.m12 * vy + this.m13 * vz + this.m14;
+		vector.y = this.m21 * vx + this.m22 * vy + this.m23 * vz + this.m24;
+		vector.z = this.m31 * vx + this.m32 * vy + this.m33 * vz + this.m34;
+
+		// everything needs to be scaled by 1/w
+		vector.multiplyByScalar(vw);
+
+		return vector;
+	},
+
+	/**
 	 * Calculates the determinant of the matrix. Primarily used for inverting the matrix
 	 *
 	 * @see http://www.euclideanspace.com/maths/algebra/matrix/functions/inverse/fourD/index.htm
