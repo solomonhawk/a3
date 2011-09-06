@@ -1,6 +1,6 @@
 /**
  * A3 - A simple 3D engine
- * 
+ *
  * @version 0.1
  * @author Paul Lewis
  */
@@ -10,13 +10,13 @@ var A3 = {};
  * A3 Constants
  */
 A3.Constants = {
-	
+
 	/**
 	 * @description The limit to the number of lights in the scene
 	 * @type Number
 	 */
 	MAX_LIGHTS: 4,
-	 
+
 	/**
 	 * @description The light types
 	 * @type Object
@@ -27,7 +27,7 @@ A3.Constants = {
 		DIRECTIONAL: 2,
 		POINT: 4
 	},
-	
+
 	/**
 	 * @description How the mesh should be rendered, i.e. solid / particle
 	 * @type Object
@@ -36,7 +36,7 @@ A3.Constants = {
 		SOLID: 1,
 		PARTICLES: 2
 	},
-	
+
 	/**
 	 * @description How the mesh should be rendered, i.e. normal / additive
 	 * @type Object
@@ -82,6 +82,12 @@ A3.Core.Render.Textures = {};
 
 /** Core Scene */
 A3.Core.Scene = {};
+
+/** Addons */
+A3.Addon = {};
+
+/** Addons: Intersection */
+A3.Addon.Intersection = {};
 /**
  * @class Represents a 3D Matrix <strong>[A3.M3]</strong>. Used much less than
  * the 4D matrix, but still has a special place in everyone's heart. Like the
@@ -533,6 +539,27 @@ A3.Core.Math.Matrix4.prototype = {
 	},
 
 	/**
+	 * Multiplies a Vector3 by this matrix, for the purposes of unprojection. <strong>Please note, this affects the vector</strong>
+	 *
+	 * @param {A3.Core.Math.Vector3} vector The vector to multiply by this matrix
+	 */
+	multiplyVector3: function(vector) {
+
+		// we assume that this is actually a 4D vector with a w component of 1
+		var vx = vector.x, vy = vector.y, vz = vector.z,
+			vw = 1 / (this.m41 * vx * this.m42 * vy + this.m43 * vz + this.m44);
+
+		vector.x = this.m11 * vx + this.m12 * vy + this.m13 * vz + this.m14;
+		vector.y = this.m21 * vx + this.m22 * vy + this.m23 * vz + this.m24;
+		vector.z = this.m31 * vx + this.m32 * vy + this.m33 * vz + this.m34;
+
+		// everything needs to be scaled by 1/w
+		vector.multiplyByScalar(vw);
+
+		return vector;
+	},
+
+	/**
 	 * Calculates the determinant of the matrix. Primarily used for inverting the matrix
 	 *
 	 * @see http://www.euclideanspace.com/maths/algebra/matrix/functions/inverse/fourD/index.htm
@@ -914,46 +941,46 @@ A3.V2 = A3.Core.Math.Vector2;
  * @class This is used in tons
  * of places but is effectively three numbers,
  * so x,y and z <strong>[A3.V3]</strong>
- * 
+ *
  * @author Paul Lewis
- * 
+ *
  * @param {Number} x The x value of the vector
  * @param {Number} y The y value of the vector
  * @param {Number} z The z value of the vector
  */
 A3.Core.Math.Vector3 = function(x,y,z) {
-	
+
 	// default to the zero vector
 	this.x = this.oldX = 0;
 	this.y = this.oldY = 0;
 	this.z = this.oldZ = 0;
-	
+
 	x = x || 0;
 	y = y || 0;
 	z = z || 0;
-	
+
 	return this.set(x,y,z);
 };
 
 A3.Core.Math.Vector3.prototype = {
-	
+
 	/**
 	 * Checks if this vector is dirty.
 	 */
 	isDirty: function() {
-		
+
 		var clean = (this.x === this.oldX) &&
                 (this.y === this.oldY) &&
                 (this.z === this.oldZ);
-	
+
 		return (!clean);
-		
+
 	},
-	
+
 	/**
 	 * Resets what we consider to be the &quot;old&quot; values
 	 * for when we test isDirty()
-	 * 
+	 *
 	 * @see A3.Core.Math.Vector3#isDirty
 	 */
 	resetDirty: function() {
@@ -962,12 +989,12 @@ A3.Core.Math.Vector3.prototype = {
 		this.oldY = this.y;
 		this.oldZ = this.z;
 
-		return this;		
+		return this;
 	},
-	
+
 	/**
 	 * Updates the vector's value
-	 * 
+	 *
 	 * @param {Number} x The x value of the vector
 	 * @param {Number} y The y value of the vector
 	 * @param {Number} z The z value of the vector
@@ -976,10 +1003,10 @@ A3.Core.Math.Vector3.prototype = {
 		this.x = x;
 		this.y = y;
 		this.z = z;
-		
+
 		return this;
 	},
-	
+
 	/**
 	 * Copies the values from the vector passed in
 	 * @param {A3.Core.Math.Vector3} vector The vector from which to copy the values
@@ -991,144 +1018,144 @@ A3.Core.Math.Vector3.prototype = {
 			vector.z
 		);
 	},
-	
+
 	/**
 	 * Performs the dot product against
 	 * the provided vector
-	 * 
+	 *
 	 * @param {A3.Core.Math.Vector3} vector The vector to perform the dot product against
 	 */
 	dot: function(vector) {
 		return this.x * vector.x + this.y * vector.y + this.z * vector.z;
 	},
-	
+
 	/**
 	 * Calculates the cross product against
 	 * the provided vector
-	 * 
+	 *
 	 * @param {A3.Core.Math.Vector3} vector The vector to perform the cross product against
 	 */
 	cross: function(vector) {
-		
+
 		var x = this.x,
         y = this.y,
         z = this.z;
-		
+
 		this.x = y * vector.z - z * vector.y;
 		this.y = z * vector.x - x * vector.z;
 		this.z = x * vector.y - y * vector.x;
-		
+
 		return this;
 	},
-	
+
 	/**
 	 * Returns the length of the vector.
 	 */
 	length: function() {
-		
-		return Math.sqrt(this.x * this.x + 
-                     this.y * this.y + 
+
+		return Math.sqrt(this.x * this.x +
+                     this.y * this.y +
                      this.z * this.z);
 	},
-	
+
 	/**
 	 * Normalizes a vector
 	 */
 	normalize: function() {
-		
+
 		// get the length of the
 		// vector
 		len = 1 / this.length();
-		
+
 		// apply to components
 		this.x *= len;
 		this.y *= len;
 		this.z *= len;
-		
+
 		return this;
 	},
-	
+
 	/**
 	 * Subtracts the components of the passed vector from the current one
-	 * 
+	 *
 	 * @param {A3.Core.Math.Vector3} vector The vector to subtract
 	 */
 	subtract: function(vector) {
-		
+
 		this.x -= vector.x;
 		this.y -= vector.y;
 		this.z -= vector.z;
-		
+
 		return this;
 	},
-	
+
 	/**
 	 * Adds the components of the passed vector to the current one
-	 * 
+	 *
 	 * @param {A3.Core.Math.Vector3} vector The vector to add
 	 */
 	add: function(vector) {
 		this.x += vector.x;
 		this.y += vector.y;
 		this.z += vector.z;
-		
+
 		return this;
 	},
-	
+
 	/**
 	 * Multiplies the vector components by a scalar
-	 * 
-	 * @param {A3.Core.Math.Vector3} vector The vector to add
+	 *
+	 * @param {Number} scalar The scalar by which to multiply
 	 */
 	multiplyByScalar: function(scalar) {
 		this.x *= scalar;
 		this.y *= scalar;
 		this.z *= scalar;
-		
+
 		return this;
 	},
-	
+
 	/**
 	 * Zeros each component of the vector
 	 */
 	zero: function() {
-		
+
 		this.x = this.y = this.z = 0;
-		
+
 		return this;
 	},
-	
+
 	/**
 	 * Negates each component of the vector
 	 */
 	negate: function() {
-		
+
 		this.x = -this.x;
 		this.y = -this.y;
 		this.z = -this.z;
-		
+
 		return this;
 	},
-	
+
 	/**
 	 * Converts the vector to an array
-	 * 
+	 *
 	 * @param {Float32Array} holder The array to populate
 	 * @throws An error if a Float32Array is not provided
 	 */
 	toArray: function(holder) {
-		
+
 		if(!holder) {
 			throw "You must provide a Float32Array to populate";
 		}
-		
+
 		holder[0] = this.x;
 		holder[1] = this.y;
 		holder[2] = this.z;
-		
+
 		return holder;
 	},
-	
+
 	/**
 	 * Converts the vector to a string
 	 * for easier reading
