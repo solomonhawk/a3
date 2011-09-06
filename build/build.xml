@@ -149,6 +149,22 @@
 		<echo file="${deploy.dir}\${deploy.file}" append="true">${chunks.compiled}</echo>
 		<echo file="${deploy.dir}\${deploy.file}" append="true">${shaders.compiled}</echo>
 
+		<if>
+			<equals arg1="${addon.intersection}" arg2="on"/>
+			<then>
+				<echo message="Adding Intersection"/>
+				<concat destfile="${deploy.dir}\${deploy.file}" append="yes">
+					<filelist dir="${src.dir}">
+
+						<!-- Intersection files -->
+						<file name="js/addon/intersection/Ray.js" />
+						<file name="js/addon/intersection/Projector.js" />
+
+					</filelist>
+				</concat>
+			</then>
+		</if>
+
 
 		<!-- now compress with YUI -->
 		<apply executable="java" parallel="false" verbose="true" dest="${deploy.dir}">
@@ -191,9 +207,10 @@
 		<echo>Cleaning...</echo>
 
 		<!-- Cleanse away! -->
-		<delete>
+		<delete quiet="true">
 			<filelist dir="${deploy.dir}">
 				<file name="${deploy.file}" />
+				<file name="${addon.intersection.min.file}" />
 			</filelist>
 		</delete>
 
@@ -214,7 +231,7 @@
 
 	</target>
 
-	<target name="build" depends="minify,jsLint"></target>
+	<target name="build" depends="minify,jsLint,license"></target>
 	<target name="buildAll" depends="minify,jsLint,document,license"></target>
 
 </project>
