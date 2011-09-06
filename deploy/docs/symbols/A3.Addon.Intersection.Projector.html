@@ -5,7 +5,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="generator" content="JsDoc Toolkit" />
 		
-		<title>JsDoc Reference - A3.Core.Render.Shaders.ShaderLibrary</title>
+		<title>JsDoc Reference - A3.Addon.Intersection.Projector</title>
 
         <link rel="stylesheet" href="../static/default.css" type="text/css" media="screen" charset="utf-8" />
 	</head>
@@ -104,7 +104,7 @@
              </h3>
              <ul>
                 <li >
-                  <a href="../symbols/A3.Core.Render.Shaders.ShaderLibrary.html">ShaderLibrary</a>
+                  <a href="../symbols/A3.Addon.Intersection.Projector.html">Projector</a>
                 </li>
              </ul>
            
@@ -112,6 +112,15 @@
 
            <!-- properties list -->
            
+           
+             <h3>Fields</h3>
+             <ul>
+               
+                 <li>
+                   <a href="../symbols/A3.Addon.Intersection.Projector.html#camera">camera</a>
+                 </li>
+               
+             </ul>
            
            <!-- end properties list -->
 
@@ -122,15 +131,7 @@
              <ul>
                
                    <li>
-                        <a href="../symbols/A3.Core.Render.Shaders.ShaderLibrary.html#-convertNumber">convertNumber</a>
-                    </li>
-               
-                   <li>
-                        <a href="../symbols/A3.Core.Render.Shaders.ShaderLibrary.html#-convertVector">convertVector</a>
-                    </li>
-               
-                   <li>
-                        <a href="../symbols/A3.Core.Render.Shaders.ShaderLibrary.html#-replaceChunks">replaceChunks</a>
+                        <a href="../symbols/A3.Addon.Intersection.Projector.html#unproject">unproject</a>
                     </li>
                
              </ul>
@@ -146,7 +147,7 @@
 		<div id="content">
 <!-- ============================== class title ============================ -->
 			<h1 class="classTitle">
-				Class A3.Core.Render.Shaders.ShaderLibrary
+				Class A3.Addon.Intersection.Projector
 			</h1>
 
 <!-- ============================== class summary ========================== -->			
@@ -154,7 +155,7 @@
 				
 				
 			
-				Contains a squad of WebGL shaders <strong>[A3.ShaderCache]</strong>.
+				Small utility to unproject a vector back to the screen<strong>[A3.Ray]</strong>.
 				
 				
 					<br /><i>Defined in: </i> <a href="../symbols/src/_Users_Paul_Dropbox_Projects_Sites_A3_deploy_www_js_a3.js.html">a3.js</a>.
@@ -169,7 +170,7 @@
 				</div>
 				
 				<div class="fixedFont">
-						<b>A3.Core.Render.Shaders.ShaderLibrary</b>()
+						<b>A3.Addon.Intersection.Projector</b>(vector, camera)
 				</div>
 				
 				<div class="description">
@@ -180,6 +181,23 @@
 				
 				
 				
+					
+						<dl class="detailList">
+						<dt class="heading">Parameters:</dt>
+						
+							<dt>
+								<span class="light fixedFont">{<a href="../symbols/A3.Core.Math.Vector3.html">A3.Core.Math.Vector3</a>}</span>  <b>vector</b>
+								
+							</dt>
+								<dd>The vector to unproject</dd>
+						
+							<dt>
+								<span class="light fixedFont">{<a href="../symbols/A3.Core.Camera.BasicCamera.html">A3.Core.Camera.BasicCamera</a>}</span>  <b>camera</b>
+								
+							</dt>
+								<dd>The camera to use for the unprojection</dd>
+						
+						</dl>
 					
 					
 					
@@ -193,6 +211,37 @@
 
 <!-- ============================== field details ========================== -->		
 			
+              <div class="details">
+				<div class="sectionTitle">
+					Field Detail
+				</div>
+				
+                  <div class="member">
+					<a name="camera"> </a>
+					<div class="fixedFont">
+                      <div class="modifiers">
+                      </div>
+					
+					
+					<b>camera</b>
+					
+					</div>
+					<div class="description">
+						<p>The camera to use for unprojections</p>
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+                  </div>
+				
+              </div>
+			
 
 <!-- ============================== method details ========================= -->		
 			
@@ -202,17 +251,16 @@
 				</div>
 				
                   <div class="member">
-					<a name="-convertNumber"> </a>
+					<a name="unproject"> </a>
 					<div class="fixedFont">
-                      <div class="modifiers">&lt;inner&gt; 
+                      <div class="modifiers">
                       </div>
 					
-					<b>convertNumber</b>(number)
+					<b>unproject</b>(vector)
 					
 					</div>
 					<div class="description">
-						<p>Converts a number for GLSL, so basically parses a float out
-and ensures it has a trailing .0 if needed</p>
+						<p>Takes a vector and unprojects it from the screen space out into the world space</p>
 						
 						
 					</div>
@@ -224,10 +272,10 @@ and ensures it has a trailing .0 if needed</p>
 							<dt class="heading">Parameters:</dt>
 							
 								<dt>
-									<span class="light fixedFont">{Number}</span> <b>number</b>
+									<span class="light fixedFont">{<a href="../symbols/A3.Core.Math.Vector2.html">A3.Core.Math.Vector2</a>}</span> <b>vector</b>
 									
 								</dt>
-								<dd>The number to convert</dd>
+								<dd>The vector to unproject, x should be -1 to 1 (left to right), y should 1 to -1 (top to bottom); WebGL Y coordinates are &quot;inverted&quot;</dd>
 							
 							</dl>
 						
@@ -236,84 +284,13 @@ and ensures it has a trailing .0 if needed</p>
 						
 						
 						
-						
-
-                  </div>
-				
-                  <div class="member">
-					<a name="-convertVector"> </a>
-					<div class="fixedFont">
-                      <div class="modifiers">&lt;inner&gt; 
-                      </div>
-					
-					<b>convertVector</b>(vector)
-					
-					</div>
-					<div class="description">
-						<p>Converts a vector for use in GLSL. Lovely.</p>
-						
-						
-					</div>
-					
-					
-					
 						
 							<dl class="detailList">
-							<dt class="heading">Parameters:</dt>
+							<dt class="heading">See:</dt>
 							
-								<dt>
-									<span class="light fixedFont">{<a href="../symbols/A3.Core.Math.Vector3.html">A3.Core.Math.Vector3</a>}</span> <b>vector</b>
-									
-								</dt>
-								<dd>The vector to convert</dd>
+								<dd><a href="http://msdn.microsoft.com/en-us/library/microsoft.xna.framework.graphics.viewport.unproject.aspx">MSDN Unproject Vector</a> has a good breakdown</dd>
 							
 							</dl>
-						
-						
-						
-						
-						
-						
-						
-
-                  </div>
-				
-                  <div class="member">
-					<a name="-replaceChunks"> </a>
-					<div class="fixedFont">
-                      <div class="modifiers">&lt;inner&gt; 
-                      </div>
-					
-					<b>replaceChunks</b>(shader)
-					
-					</div>
-					<div class="description">
-						<p>Replaces the chunks of GLSL with others, so
-things like the lighting code or variables
-we want to bake in</p>
-						
-						
-					</div>
-					
-					
-					
-						
-							<dl class="detailList">
-							<dt class="heading">Parameters:</dt>
-							
-								<dt>
-									<span class="light fixedFont">{String}</span> <b>shader</b>
-									
-								</dt>
-								<dd>The shader to look at</dd>
-							
-							</dl>
-						
-						
-						
-						
-						
-						
 						
 
                   </div>
@@ -330,7 +307,7 @@ we want to bake in</p>
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both;text-align:center">
 			
-			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Tue Sep 06 2011 22:33:29 GMT+0200 (CEST)
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Tue Sep 06 2011 22:33:28 GMT+0200 (CEST)
 		</div>
 	</body>
 </html>
